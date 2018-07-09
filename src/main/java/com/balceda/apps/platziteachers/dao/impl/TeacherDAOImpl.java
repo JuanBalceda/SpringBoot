@@ -17,9 +17,10 @@ public class TeacherDAOImpl extends AbstractSession implements TeacherDAO {
 		getSession().persist(t);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Teacher> findAll() throws DAOException {
-		return null;
+		return (List<Teacher>) getSession().createQuery("from Teacher").list();
 	}
 
 	@Override

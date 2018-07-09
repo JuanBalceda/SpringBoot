@@ -1,11 +1,13 @@
 package com.balceda.apps.platziteachers.dao.impl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import com.balceda.apps.platziteachers.dao.AbstractSession;
 import com.balceda.apps.platziteachers.dao.exception.DAOException;
 import com.balceda.apps.platziteachers.dao.interfaces.TeacherDAO;
 import com.balceda.apps.platziteachers.model.Teacher;
+import com.balceda.apps.platziteachers.model.TeacherSocialMedia;
 
 public class TeacherDAOImpl extends AbstractSession implements TeacherDAO {
 
@@ -17,7 +19,6 @@ public class TeacherDAOImpl extends AbstractSession implements TeacherDAO {
 		getSession().persist(t);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Teacher> findAll() throws DAOException {
 		return (List<Teacher>) getSession().createQuery("from Teacher").list();
@@ -27,6 +28,13 @@ public class TeacherDAOImpl extends AbstractSession implements TeacherDAO {
 	public void deleteById(Long id) throws DAOException {
 		Teacher teacher = findById(id);
 		if (teacher != null) {
+			Iterator<TeacherSocialMedia> iterator = teacher.getTeacheSocialMedias().iterator();
+			while (iterator.hasNext()) {
+				TeacherSocialMedia tsm = (TeacherSocialMedia) iterator.next();
+				iterator.remove();
+				getSession().delete(tsm);
+			}
+			teacher.getTeacheSocialMedias().clear();
 			getSession().delete(teacher);
 		}
 	}

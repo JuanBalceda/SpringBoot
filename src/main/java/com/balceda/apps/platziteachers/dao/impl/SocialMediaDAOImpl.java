@@ -18,7 +18,6 @@ public class SocialMediaDAOImpl extends AbstractSession implements SocialMediaDA
 		getSession().persist(t);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<SocialMedia> findAll() throws DAOException {
 		return (List<SocialMedia>) getSession().createQuery("from SocialMedia").list();
@@ -48,7 +47,6 @@ public class SocialMediaDAOImpl extends AbstractSession implements SocialMediaDA
 				.uniqueResult();
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public TeacherSocialMedia findSocialMediaByIdAndName(long id, String name) {
 		List<Object[]> objects = getSession().createQuery("from TeacherSocialMedia tsm "

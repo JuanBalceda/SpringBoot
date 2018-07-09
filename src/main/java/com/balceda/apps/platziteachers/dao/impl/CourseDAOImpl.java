@@ -17,7 +17,6 @@ public class CourseDAOImpl extends AbstractSession implements CourseDAO {
 		getSession().persist(t);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> findAll() throws DAOException {
 		return (List<Course>) getSession().createQuery("from Course").list();
@@ -48,7 +47,6 @@ public class CourseDAOImpl extends AbstractSession implements CourseDAO {
 				.uniqueResult();
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> findByIdTeacher(long id) throws DAOException {
 		return (List<Course>) getSession().createQuery(

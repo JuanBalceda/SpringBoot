@@ -1,8 +1,9 @@
 package com.balceda.apps.platziteachers.dao.interfaces;
 
+import com.balceda.apps.platziteachers.dao.exception.DAOException;
 import com.balceda.apps.platziteachers.model.SocialMedia;
 import com.balceda.apps.platziteachers.model.TeacherSocialMedia;
 
 public interface SocialMediaDAO extends DAO<SocialMedia> {
-	TeacherSocialMedia findSocialMediaByIdAndName(long id, String name);
+	TeacherSocialMedia findSocialMediaByIdAndName(long id, String name) throws DAOException;
 }

@@ -2,11 +2,17 @@ package com.balceda.apps.platziteachers.dao.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.balceda.apps.platziteachers.dao.AbstractSession;
 import com.balceda.apps.platziteachers.dao.exception.DAOException;
 import com.balceda.apps.platziteachers.dao.interfaces.CourseDAO;
 import com.balceda.apps.platziteachers.model.Course;
 
+@Repository
+@Transactional
 public class CourseDAOImpl extends AbstractSession implements CourseDAO {
 
 	public CourseDAOImpl() {

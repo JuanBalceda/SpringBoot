@@ -2,12 +2,18 @@ package com.balceda.apps.platziteachers.dao.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.balceda.apps.platziteachers.dao.AbstractSession;
 import com.balceda.apps.platziteachers.dao.exception.DAOException;
 import com.balceda.apps.platziteachers.dao.interfaces.SocialMediaDAO;
 import com.balceda.apps.platziteachers.model.SocialMedia;
 import com.balceda.apps.platziteachers.model.TeacherSocialMedia;
 
+@Repository
+@Transactional
 public class SocialMediaDAOImpl extends AbstractSession implements SocialMediaDAO {
 
 	public SocialMediaDAOImpl() {
@@ -48,7 +54,7 @@ public class SocialMediaDAOImpl extends AbstractSession implements SocialMediaDA
 	}
 
 	@Override
-	public TeacherSocialMedia findSocialMediaByIdAndName(long id, String name) {
+	public TeacherSocialMedia findSocialMediaByIdAndName(long id, String name) throws DAOException {
 		List<Object[]> objects = getSession().createQuery("from TeacherSocialMedia tsm "
 				+ "join tsm.socialMedia sm where sm.idSocialMedia = :id" + "and tsm.nickname = :nickname")
 				.setParameter("id", id).setParameter("nickname", name).list();

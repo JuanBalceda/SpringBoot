@@ -10,7 +10,7 @@ public class MainController {
 	@RequestMapping("/")
 	@ResponseBody
 	public String index() {
-		String response = "Bienvenido! :)";
+		String response = "<h1>Bienvenido! :)</h1>";
 		return response;
 	}
 }

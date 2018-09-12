@@ -12,10 +12,11 @@ import com.balceda.apps.platziteachers.dao.interfaces.SocialMediaDAO;
 import com.balceda.apps.platziteachers.model.SocialMedia;
 import com.balceda.apps.platziteachers.model.TeacherSocialMedia;
 import com.balceda.apps.platziteachers.service.exception.ServiceException;
+import com.balceda.apps.platziteachers.service.interfaces.SocialMediaService;
 
 @Service("socialMediaService")
 @Transactional
-public class SocialMediaServiceImpl implements com.balceda.apps.platziteachers.service.interfaces.SocialMediaService {
+public class SocialMediaServiceImpl implements SocialMediaService {
 
 	@Autowired
 	private SocialMediaDAO socialMediaDAO;

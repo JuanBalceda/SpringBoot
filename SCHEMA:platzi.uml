@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>28350a34-2fb9-4bbd-9be5-b5c8ab95d682.SCHEMA:platzi</OriginalElement>
+  <nodes>
+    <node x="-105.0" y="202.0">28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.course</node>
+    <node x="435.5" y="-43.0">28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.social_media</node>
+    <node x="-14.75" y="-7.0">28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.teacher</node>
+    <node x="258.0" y="171.0">28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.teacher_social_media</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.teacher_social_media" target="28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.social_media">
+      <point x="69.5" y="-64.0" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.teacher_social_media" target="28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.teacher">
+      <point x="-69.5" y="-64.0" />
+      <point x="285.5" y="129.0" />
+      <point x="191.5" y="129.0" />
+      <point x="46.75" y="52.0" />
+    </edge>
+    <edge source="28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.course" target="28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.teacher">
+      <point x="0.0" y="-76.0" />
+      <point x="-46.75" y="52.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="271.5" y="148.5" />
+  <SelectedNodes>
+    <node>28350a34-2fb9-4bbd-9be5-b5c8ab95d682.TABLE:platzi.teacher_social_media</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
